@@ -77,12 +77,14 @@ public class Song {
             skip(is, messageOffset - pointer);
             message = readString(is, messageLength);
 
-            /*
             instruments = new Instrument[instrumentNum];
             for (int i = 0; i < instrumentNum; i++) {
+                if (pointer != instrumentOffsets[i]) {
+                    skip(is, instrumentOffsets[i] - pointer);
+                }
                 instruments[i] = new Instrument(is);
+                log("Instrument " + i + " created, pointer=" + pointer);
             }
-             */
 
             samples = new Sample[sampleNum];
             for (int i = 0; i < sampleNum; i++) {
