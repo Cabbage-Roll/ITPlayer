@@ -108,10 +108,12 @@ public class SongPlayer {
                     }
                     c = data[pointer++];
                 }
+            } else {
+                System.out.println("data is not valid");
             }
-            System.out.println("data is not valid");
+        } else {
+            System.out.println("data not found");
         }
-        System.out.println("data not found");
     }
 
     private void tick(int tick, int n) {

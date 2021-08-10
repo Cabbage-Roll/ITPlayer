@@ -34,6 +34,7 @@ public class Song {
     private Instrument[] instruments;
     private Sample[] samples;
     private Pattern[] patterns;
+
     public Song(InputStream is) {
         try {
             // IMPM
@@ -233,7 +234,9 @@ public class Song {
     }
 
     private void skip(InputStream is, int n) throws IOException {
+        System.out.println("Skipping, pointer=" + pointer);
         System.out.println("Skipped: " + readString(is, n));
+        System.out.println("Skip done, pointer=" + pointer);
     }
 
     public class Sample {
